@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Post Form</title>
+</head>
+
+<body>
+
+        <% if (post.errors) { %>
+            <h2>Errors found in form</h2>
+            <ul>
+                <% for (let msg of Object.values(post.errors)) { %>
+                    <li><%= msg %></li>
+                <% } %>
+            </ul>
+        <% } %>
+    
+
+    <form action="/posts" method="POST" enctype="multipart/form-data">
+        <div>
+            <label>
+                Author:
+                <input type="text" name="author" value="<%= post.author %>"/>
+            </label>
+        </div>
+        <div>
+            <label>
+                Text:
+                <textarea name="text"><%= post.text %></textarea>
+            </label>
+        </div>
+
+        <div>
+            <label>
+                Color:
+                <input type="color" name="color" value="<%= post.color %>" />
+            </label>
+        </div>
+
+        <div>
+            <label>
+                Image:
+                <input type="file" name="postpic" accept="image/*" />
+            </label>
+        </div>        
+        <input type="submit" value="Post" />
+    </form>
+</body>
+
+</html>

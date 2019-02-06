@@ -1,0 +1,44 @@
+<html>
+    <head></head>
+    <style>
+        .feed {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feed li {
+            margin: 10px;
+            padding: 10px;
+            box-shadow: 1px 1px 2px 2px rgba(0,0,0,.8);
+            background: rgba(230, 230, 230, 0.8);
+        }
+
+        .feed .author {
+            font-weight: bold;
+        }
+
+        .feed .author::after {
+            content: ":";
+        }
+    </style>
+
+
+<body>
+    <a href='/posts/new'>New Message</a>
+    <ul class="feed">
+    <% for (let post of posts) { %>
+        <li>
+            <span class="author"><%= post.author %></span>
+            <span class="text" style="color: <%= post.color %>"><%= post.text %></span>
+            <% if (post.image) { %>
+                <img src="/posts/<%= post.id %>/img" />
+            <% } %>
+        </li>
+    <% } %>
+    </ul>
+
+    <%- include('../paginate', { paginate: pagination }) %>
+</body>
+
+</html>

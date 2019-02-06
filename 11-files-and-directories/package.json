@@ -1,0 +1,17 @@
+{
+  "name": "11-files-and-directories",
+  "version": "1.0.0",
+  "description": "",
+  "main": "check.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^7.0.0"
+  }
+}

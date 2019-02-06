@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <% if (user) { %>
+      <p>Nice to see you: <%= user.email %></p>
+      <form action="/sessions/logout" method="POST">
+        <input type="submit" value="Logout" />
+      </form>
+      <ul class="messages"></ul>
+    <% } %>
+    <a href='/sessions/'>Login</a>
+    <script src="/socket.io/socket.io.js"></script>
+      <script>
+          const socket = io('ws://localhost:3000/');
+          const messages = document.querySelector('.messages');
+          socket.on('msg', function(text) {
+            console.log('--- new message');
+            console.log(text);
+              const li = document.createElement('li');
+              li.textContent = text;
+              messages.appendChild(li);
+          });
+    </script>
+  </body>
+</html>

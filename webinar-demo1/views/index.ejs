@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Express</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>All Posts</h1>
+    <% posts.forEach(post => { %>
+        <div class="post">
+          <h2><%= post.header %></h2>
+          <p><%= post.content %></p>
+        </div>
+        <hr />
+    <% }); %>
+    <h1>New Post Form</h1>
+    <form method="POST">
+      <label>
+        Header
+        <input type="text" name="header" />
+      </label>
+      <label>
+        Content
+        <textarea name="content"></textarea>
+      </label>
+      <input type="submit" value="Save" />
+    </form>
+  </body>
+</html>

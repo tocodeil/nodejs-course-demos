@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' href='stylesheets/style.css' />
+</head>
+
+<body>
+    <div class='container'>
+        <main>
+            <ul class="panel">
+                <li>
+                    <b>Server:</b> Hello World
+                </li>
+            </ul>
+            <input type="text" class="my-message-box" />
+            <button class="send-message-button">Send</button>
+        </main>
+
+        <div class="sidebar">
+            <input type="text" class="new-room-name" placeholder="new room name..." />
+            <button class="btn-new-room">Create Room</button>
+
+            <ul class="room-list">
+                <li class="active room">lobby</li>
+            </ul>
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="javascripts/app.js"></script>
+    <script src="javascripts/chat.js"></script>
+</body>
+
+</html>

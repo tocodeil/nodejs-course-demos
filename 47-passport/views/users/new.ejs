@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Signup Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Sign Up</h1>
+        <% if (user.errors) { %>
+        <h2>Errors found in form</h2>
+        <ul>
+            <% for (let msg of Object.values(user.errors)) { %>
+            <li>
+                <%= msg %>
+            </li>
+            <% } %>
+        </ul>
+        <% } %>
+
+    <form method="POST">
+        <div class='field'>
+            <label>
+                Email
+                <input type='email' name='email' /> 
+            </label>
+        </div>
+        <div class='field'>
+            <label>
+                Password
+                <input type='password' name='password' /> 
+            </label>
+        </div>
+
+        <input type="submit" value="Sign Up" />
+        Already a member? <a href='/sessions'>Login</a>
+    </form>
+  </body>
+</html>
+
+

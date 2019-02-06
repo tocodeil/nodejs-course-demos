@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create new token</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>New Token</h1>
+
+    <% if (locals.token) { %>
+        <pre>
+            <%= token %>
+        </pre>
+    <% } %>
+
+    <form method="POST" action="/tokens">
+        <input type="submit" value="Get a token" />
+    </form>
+  </body>
+</html>

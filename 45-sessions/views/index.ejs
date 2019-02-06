@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <% if (user) { %>
+      <p>Nice to see you: <%= user.email %></p>
+      <form action="/sessions" method="DESTROY">
+        <input type="submit" value="Logout" />
+      </form>
+    <% } %>
+    <a href='/sessions/'>Login</a>
+  </body>
+</html>

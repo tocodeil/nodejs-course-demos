@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Login</h1>
+
+    <% if (locals.error) { %>
+        <p>
+            <%= error %>
+        </p>
+    <% } %>
+
+    <form method="POST" action="/sessions">
+        <div class='field'>
+            <label>
+                Email
+                <input type='email' name='email' value="<%= user.email %>" /> 
+            </label>
+        </div>
+        <div class='field'>
+            <label>
+                Password
+                <input type='password' name='password' /> 
+            </label>
+        </div>
+
+        <input type="submit" value="Sign In" />
+        New Member? <a href='/users/new'>Signup</a>
+    </form>
+  </body>
+</html>

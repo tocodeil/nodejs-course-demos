@@ -1,0 +1,5 @@
+<ul class="paginate">
+    <% for (let i=1; i < paginate.totalPages; i++) { %>
+        <li><a href="<%= paginate.url(i) %>"><%= i %></a></li>
+    <% } %>
+</ul>

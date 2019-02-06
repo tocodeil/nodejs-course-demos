@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>List of contacts</h1>
+        <a href='/contacts/new'>New Contact</a>
+        <ul>
+            <% for (let c of contacts) { %>
+                <li>
+                    <a href="<%= `/contacts/${c.id}` %>">
+                    <%= c.name %> &lt;<%= c.email %>&gt;
+                    </a>
+                </li>
+            <% } %>
+        </ul>
+    </body>
+</html>

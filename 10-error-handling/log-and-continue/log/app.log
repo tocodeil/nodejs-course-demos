@@ -1,0 +1,1 @@
+error: ENOENT: no such file or directory, open 'C:\Windows\winnn.ini' {"errno":-4058,"code":"ENOENT","syscall":"open","path":"C:\\Windows\\winnn.ini"}

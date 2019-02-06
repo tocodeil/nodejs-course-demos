@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Login</h1>
+    <% if (error) { %>
+        <div class="error"><%= error %></div>
+    <% } %>
+    <form method="POST">
+        <div class='field'>
+            <label>
+                Email
+                <input type='email' name='email' /> 
+            </label>
+        </div>
+        <div class='field'>
+            <label>
+                Password
+                <input type='password' name='password' /> 
+            </label>
+        </div>
+
+        <input type="submit" value="Login" />
+        Not a member? <a href='/users'>Sign Up</a>
+    </form>
+  </body>
+</html>
+
