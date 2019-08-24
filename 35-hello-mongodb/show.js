@@ -3,10 +3,14 @@ const assert = require('assert');
 
 // Connection URL
 const url = 'mongodb://localhost:27017';
+const connectOptions = {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+};
 
 // Database Name
 const dbName = 'myproject';
-const client = new MongoClient(url, { useNewUrlParser: true });
+const client = new MongoClient(url, connectOptions);
 
 async function main() {
    await client.connect(); 
